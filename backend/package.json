@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "dev": "nodemon --watch . --ext ts --exec tsx server.ts",
-    "seed": "ts-node seedUsers.ts"
-  },
+ "scripts": {
+  "dev": "nodemon --watch . --ext ts --exec tsx server.ts",
+  "start": "tsx server.ts",
+  "build": "echo Build complete",
+  "seed": "ts-node seedUsers.ts"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
