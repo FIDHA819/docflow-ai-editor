@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  @apply bg-slate-50 text-slate-900 antialiased;
+}
+
+.ProseMirror {
+  @apply min-h-[420px] outline-none;
+}
+
+.ProseMirror p {
+  @apply mb-3 leading-7 text-slate-800;
+}
+
+.ProseMirror h1 {
+  @apply mt-6 mb-4 text-3xl font-bold text-slate-900;
+}
+
+.ProseMirror h2 {
+  @apply mt-5 mb-3 text-2xl font-semibold text-slate-900;
+}
+
+.ProseMirror ul {
+  @apply mb-4 list-disc pl-6;
+}
+
+.ProseMirror ol {
+  @apply mb-4 list-decimal pl-6;
+}
+
+.ProseMirror li {
+  @apply mb-1;
+}
+
+.ProseMirror strong {
+  @apply font-semibold text-slate-900;
+}
+
+.ProseMirror em {
+  @apply italic;
+}
