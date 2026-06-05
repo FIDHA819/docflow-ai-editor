@@ -33,12 +33,7 @@ export default function EditorPage() {
         setLoading(true);
         const data = await getDocument(id!);
         setTitle(data.title || "Untitled document");
-        setContent(
-          data.content || {
-            type: "doc",
-            content: [{ type: "paragraph" }],
-          }
-        );
+      setContent(data.content as JSONContent);
       } catch {
         toast.error("Failed to load document");
         navigate("/dashboard");
@@ -57,7 +52,10 @@ export default function EditorPage() {
 
     const timeout = setTimeout(async () => {
       try {
-        await updateDocument(id, { title, content });
+       await updateDocument(id, {
+  title,
+  content: content as any,
+});
         setSaveState("saved");
 
         setTimeout(() => {

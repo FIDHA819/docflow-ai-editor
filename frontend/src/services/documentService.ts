@@ -1,4 +1,7 @@
 import api from "./api";
+import type { JSONContent } from "@tiptap/core";
+
+
 import type { DocumentItem, TiptapContent } from "../types/document";
 
 export const createDocument = async (): Promise<DocumentItem> => {
@@ -21,7 +24,10 @@ export const getDocument = async (id: string): Promise<DocumentItem> => {
 
 export const updateDocument = async (
   id: string,
-  data: { title: string; content: TiptapContent | null }
+ data: {
+  title: string;
+  content: JSONContent | null;
+}
 ): Promise<DocumentItem> => {
   const response = await api.put(`/documents/${id}`, data);
   return response.data;
